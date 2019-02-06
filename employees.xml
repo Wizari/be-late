@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workers>
+    <descriptor>
+        <status>true</status>
+        <name>Симагин</name>
+    </descriptor>
+    <descriptor>
+        <status>true</status>
+        <name>Антонов Web</name>
+    </descriptor>
+        <descriptor>
+        <status>false</status>
+        <name>Федоренко</name>
+    </descriptor>
+    <descriptor>
+        <status>true</status>
+        <name>Рысин</name>
+    </descriptor>
+    <descriptor>
+        <status>true</status>
+        <name>Иванов</name>
+    </descriptor>
+</workers>

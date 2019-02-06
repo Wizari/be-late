@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<!--<style>-->
+<!--p {-->
+<!--margin-top: 0.5em; /* Отступ сверху */-->
+<!--margin-bottom: 2em; /* Отступ снизу */-->
+<!--}-->
+<!--</style>-->
+<head>
+    <meta charset="UTF-8"/>
+    <title>Wizari home page</title>
+</head>
+<body leftmargin="20%" topmargin="5%">
+<h3>Hello world!!!</h3>
+<!--<h2  th:text="'Message: ' + ${box}">Message: ящик</h2>-->
+
+<!--<table th:each="e : ${employees}">-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td th:text="${e.name}">Onions</td>&ndash;&gt;-->
+<!--<input type="checkbox" value="" th:text="${e.name}" name="active" th:checked="${e.status}" />-->
+<!--</tr>-->
+<!--</table>-->
+<!--<br>-->
+<!--<button type="submit" name="action" value="send">send</button>-->
+
+
+<form method="post" th:object="${employeeContainer}" th:action="@{/send}">
+    <table>
+        <tr th:each="e,stat : *{employees}">
+            <td><input type="checkbox"
+                       th:field="*{employees[__${stat.index}__].status}"
+                       th:checked="${e.status}"/>
+                            </td>
+            <input type="hidden" th:field="*{employees[__${stat.index}__].name}"/>
+            <td th:text="${e.name}" ></td>
+        </tr>
+    </table>
+
+    <!--Conditional operators:-->
+    <!--If-then: (if) ? (then)-->
+    <!--If-then-else: (if) ? (then) : (else)-->
+    <!--Default: (value) ?: (defaultvalue)-->
+    <!--All these features can be combined and nested:-->
+
+    <!--'User is of type ' + (${user.isAdmin()} ? 'Administrator' : (${user.type} ?: 'Unknown'))-->
+
+
+
+
+    <!--<div th:each="e,iter  : ${employeeContainer.employees}">-->
+    <!--<input type="checkbox" th:checked="*{employees(${iter}}).status}" >-->
+    <!--</div>-->
+    <!--<p th:each="e : ${employeeContainer.employees}">-->
+    <!--<div th:text="${e.name}"></div>-->
+    <!--</p>-->
+    <input type="submit"/>
+</form>
+
+<!--</form>-->
+
+<!--&lt;!&ndash;<td th:text="${prod.price}">2.41</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td th:text="${prod.inStock}? #{true} : #{false}">yes</td>&ndash;&gt;-->
+<!--<input type="checkbox" name="option1" checked /> &lt;!&ndash; HTML &ndash;&gt;-->
+<!--<input type="checkbox" name="option2" checked /> &lt;!&ndash; HTML &ndash;&gt;-->
+<!--<input type="checkbox" name="option3" checked="checked" /> &lt;!&ndash; XHTML &ndash;&gt;-->
+<!--<input type="checkbox" name="option4" checked="checked" /> &lt;!&ndash; XHTML &ndash;&gt;-->
+<!--<p th:text="'Hello, ' + ${name123} + '!'" />-->
+<!--<p th:text="'Hello, ' + ${name123} + '!'" />-->
+<!--<input type="checkbox" name="option1" checked /> &lt;!&ndash; HTML &ndash;&gt;-->
+<!--<input type="checkbox" name="option2" checked /> &lt;!&ndash; HTML &ndash;&gt;-->
+<!--<input type="checkbox" name="option3" checked="checked" /> &lt;!&ndash; XHTML &ndash;&gt;-->
+<!--<input type="checkbox" name="option4" checked="checked" /> &lt;!&ndash; XHTML &ndash;&gt;-->
+
+</body>
+</html>
